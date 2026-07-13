@@ -2,9 +2,7 @@ import os
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
-from dotenv import load_dotenv
 
-load_dotenv()
 TOKEN = "8924554471:AAEhKhxHcee5X55DutFdffC-LeX0dHCXV1c"
 
 logging.basicConfig(level=logging.INFO)
@@ -52,7 +50,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     if not TOKEN:
-        print("❌ Ошибка: TELEGRAM_BOT_TOKEN не найден")
+        print("❌ Ошибка: TOKEN не найден")
         return
     
     app = Application.builder().token(TOKEN).build()
