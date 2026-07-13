@@ -5,7 +5,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv("8924554471:AAEhKhxHcee5X55DutFdffC-LeXOdHCXV1c")
+TOKEN = "8924554471:AAEhKhxHcee5X55DutFdffC-LeX0dHCXV1c"
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
