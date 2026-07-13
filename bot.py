@@ -19,7 +19,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     await update.message.reply_text(
         "✈️ **PostPilot** — твой пилот в мире контента\n\n"
-        "Выбери действие:",
+        "👇 **Выбери действие:**",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -33,9 +33,22 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "posts":
         await query.edit_message_text("📋 У тебя пока нет постов.")
     elif query.data == "subscribe":
-        await query.edit_message_text("💎 Подписка: 29₽/неделя, 49₽/месяц")
+        await query.edit_message_text(
+            "💎 **Подписка**\n\n"
+            "💰 **Выбери период:**\n"
+            "🟢 Неделя — 29 ₽\n"
+            "🔵 Месяц — 49 ₽\n"
+            "🟣 3 месяца — 119 ₽\n"
+            "🟡 Год — 399 ₽",
+            parse_mode="Markdown"
+        )
     elif query.data == "support":
-        await query.edit_message_text("🆘 Напиши в поддержку: @support")
+        await query.edit_message_text(
+            "🆘 **Поддержка**\n\n"
+            "Напиши нам: @support\n"
+            "Или нажми кнопку ниже.",
+            parse_mode="Markdown"
+        )
 
 def main():
     if not TOKEN:
