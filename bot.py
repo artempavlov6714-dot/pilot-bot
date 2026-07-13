@@ -52,7 +52,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     if not TOKEN:
-        print("❌ Ошибка: TELEGRAM_BOT_TOKEN не найден")
+        print("❌ Ошибка: телеграм токен не найден")
         return
     
     app = Application.builder().token(TOKEN).build()
